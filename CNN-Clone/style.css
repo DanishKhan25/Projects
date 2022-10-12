@@ -126,16 +126,17 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.container {
-  width: 80vw;
+.wrapper {
+  width: 85vw;
   margin: 0 auto;
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 label:hover {
   cursor: pointer;
 }
+
 /* ============================= */
 /* =HEADER= */
 /* ============================= */
@@ -149,16 +150,21 @@ label:hover {
 .page-header a {
   color: inherit;
 }
-.container {
+.wrapper {
   display: flex;
   justify-content: space-between;
   align-content: center;
   align-items: center;
 }
-
+.page-log {
+  position: absolute;
+  width: 100%;
+}
 .page-logo img {
+  position: relative;
   height: 60px;
   width: 60px;
+  z-index: 10000000;
 }
 .header-left {
   display: flex;
@@ -173,6 +179,7 @@ label:hover {
   display: flex;
   align-items: center;
   height: 50px;
+  padding: 0;
   margin-left: 15px;
 }
 
@@ -191,15 +198,28 @@ label:hover {
 .page-nav a:hover {
   color: #fff;
 }
-
+/* =Search-field= */
 .page-search-field {
-  width: 0;
-  visibility: hidden;
+  width: 75vw;
+  position: absolute;
+  right: 35px;
+  top: -7px;
+  padding: 5px;
+  font-size: 16px;
+  height: 30px;
+  border-radius: 5px;
+  display: none;
 }
-
+.page-search {
+  position: relative;
+}
+#search-switcher:checked ~ .page-search-field {
+  display: block;
+}
 .search-switcher-label {
   margin: 0 15px;
 }
+/* =international-edition= */
 .international-edition {
   position: relative;
 
@@ -253,4 +273,80 @@ label:hover {
   height: 30px;
   line-height: 28px;
   margin: 15px 0;
+}
+/* =header-expanded-menu-block= */
+
+.header-expanded-menu-block {
+  width: 100vw;
+
+  background: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 50px;
+  right: 0;
+  display: none;
+}
+#expanded-switcher:checked ~ .header-expanded-menu-block {
+  display: block;
+}
+.expanded-top-block {
+  padding: 25px;
+  width: 90%;
+  margin: 0 auto;
+}
+.expanded-top-block h3 {
+  font-size: 22px;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.expanded-top-block a {
+  font-size: 14px;
+  font-weight: 300;
+  color: #bfbfbf;
+  line-height: 1.5;
+}
+.expanded-top-block ul {
+  padding: 0;
+}
+.expanded-top-block a:hover {
+  color: #fff;
+}
+.wrapper-extended {
+  display: flex;
+  flex-direction: column;
+}
+.expanded-bottom-block ul {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 0px;
+}
+.expanded-bottom-block img {
+  width: 30px;
+  height: 30px;
+}
+.expanded-bottom-block {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+  width: 90%;
+  margin: 0 auto;
+}
+.bottom-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.bottom-wrap p {
+  margin: 0;
+  font-size: 15px;
+}
+.bottom-wrap label {
+  font-size: 15px;
 }
